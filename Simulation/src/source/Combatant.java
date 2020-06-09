@@ -1,19 +1,38 @@
 package source;
 
 public class Combatant {
+	
+	//Base Stats
+	int str;
+	int dex;
+	int edu;
+	int itl;
+	int wil;
+	int agi;
+	int per;
 
 	//Health Values
-	int HP;
-	int initialHP;
+	int HP;				//Current Hit Points
+	int initialHP;		//Max Hit Points
+	int regenHP;		//Health Regen
+	int Stam;			//Current Stamina
+	int initialStam;	//Max Stamina
+	int regenStam;		//Stamina Regen
 	
 	//Attack Values
 	Weapon wep1;
 	
-	//Defensive procs
+	//Defensive Secondary Stats
 	int blproc;			//Block Proc
+	int rEva,mEva;		//Evasion for Ranged and Melee attacks
 	
-	//Offensive Procs
+	//Offensive Secondar Stats
 	int cproc;			//Crit Chance
+	int rAcc,mAcc;		//Accuracy for Ranged and Melle attacks
+	
+	//Armour Values
+	
+	
 	
 	
 	//Constant Modifiers//*********************************************
@@ -36,18 +55,12 @@ public class Combatant {
 	float ccproc = 1;	//Constant Modifier for Crit Chance
 	float ccdproc = 1;	//Constant Modifier for Crit Damage
 	float physDBproc = 1;//Constant Modifier for Physical Debuff Infliction Chance
+	float mentDBproc = 1;//Constant Modifier for Physical Debuff Infliction Chance
 	
 	
 	//Constant Modifiers//*********************************************
 	
-	//Base Stats
-	int str;
-	int dex;
-	int edu;
-	int itl;
-	int wil;
-	int agi;
-	int per;
+	
 	
 	
 	
