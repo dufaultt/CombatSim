@@ -20,8 +20,6 @@ public class Main {
 		itl1 = 50;
 		agi1 = 50;
 		per1 = 50;
-		lAtk1 = 1;
-		hAtk1 = 10;
 		bproc1 = 0;
 		wep1 = new Sword();
 		
@@ -35,8 +33,6 @@ public class Main {
 		agi2 = 50;
 		per2 = 50;
 		wil2 = 50;
-		lAtk2 = 1;
-		hAtk2 = 10;
 		bproc2 = 0;
 		wep2 = new Sword();
 		

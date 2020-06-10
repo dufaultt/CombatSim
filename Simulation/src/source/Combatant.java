@@ -19,47 +19,44 @@ public class Combatant {
 	int initialStam;	//Max Stamina
 	int regenStam;		//Stamina Regen
 	
-	//Attack Values
+	//Weapons
 	Weapon wep1;
 	
+
 	//Defensive Secondary Stats
-	int rEva,mEva;		//Evasion for Ranged and Melee attacks
+	double mEva;		//Evasion for Melee attacks
+	double rEva;		//Evasion for Ranged attacks
 	int sDf,pDf,iDf;	//Armor Stats for Phyiscal attacks
 	int hDf,cDf,eDf;	//Armor Stats for Elemental attacks
 	int rDf,bDf,oDf;	//Armor Stats for Special attacks
 	
-	//Offensive Secondary Stats
-	int rAcc,mAcc;		//Accuracy for Ranged and Melee attacks
-	
-	//Armour Values
-	
-	
-	
-	
-	//Constant Modifiers//*********************************************
+	//Constant Modifiers//*********************************************START
 	
 	//Base Stat Modifiers
-	float cstr = 1;		//Constant Modifier for Strength
-	float cdex = 1;		//Constant Modifier for Dexterity
-	float cedu = 1;		//Constant Modifier for Endurance
-	float citl = 1;		//Constant Modifier for floatelligence
-	float cwil = 1;		//Constant Modifier for Willpower
-	float cagi = 1;		//Constant Modifier for Agility
-	float cper = 1;		//Constant Modifier for Perception
+	double cstr = 1;		//Constant Modifier for Strength
+	double cdex = 1;		//Constant Modifier for Dexterity
+	double cedu = 1;		//Constant Modifier for Endurance
+	double citl = 1;		//Constant Modifier for doubleelligence
+	double cwil = 1;		//Constant Modifier for Willpower
+	double cagi = 1;		//Constant Modifier for Agility
+	double cper = 1;		//Constant Modifier for Perception
 	
 	//Defensive Modifiers
-	float cblproc = 1;	//Constant Modifier for Block Chance
-	float physDBres = 1;//Constant Modifier for Phyisical Debuff Resistance
-	float mentDBres = 1;//Constant Modifier for Mental Debuff Resistance
+	double cblproc = 1;		//Constant Modifier for Block Chance
+	double physDBres = 1;	//Constant Modifier for Phyisical Debuff Resistance
+	double mentDBres = 1;	//Constant Modifier for Mental Debuff Resistance
 	
 	//Offensive Modifiers
-	float ccproc = 1;	//Constant Modifier for Crit Chance
-	float ccdproc = 1;	//Constant Modifier for Crit Damage
-	float physDBproc = 1;//Constant Modifier for Physical Debuff Infliction Chance
-	float mentDBproc = 1;//Constant Modifier for Physical Debuff Infliction Chance
+	double ccproc = 1;		//Constant Modifier for Crit Chance
+	double ccdproc = 1;		//Constant Modifier for Crit Damage
+	double physDBproc = 1;	//Constant Modifier for Physical Debuff Infliction Chance
+	double mentDBproc = 1;	//Constant Modifier for Physical Debuff Infliction Chance
+	double rAcc = 1;		//Constant Modifier for Ranged accuracy
+	double mAcc = 1;		//Constant Modifier for Melee accuracy	
+	double melDam = 1;		//Constant Modifier for Melee damage
 	
 	
-	//Constant Modifiers//*********************************************
+	//Constant Modifiers//*********************************************END
 	
 	
 	
@@ -83,6 +80,12 @@ public class Combatant {
 	public void calcDerStats()
 	{
 		HP = (str*2)+(edu*10);
+		rAcc = rAcc + (dex*0.001);
+		mAcc = mAcc + (agi*0.001);
+		ccproc = ccproc + (per*0.0005);
+		ccdproc = ccdproc + (itl*0.005);
+		melDam = melDam + (str*0.001);
+		rEva = agi*0.01;
 	}
 	
 	public int gethealth()
