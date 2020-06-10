@@ -23,12 +23,13 @@ public class Combatant {
 	Weapon wep1;
 	
 	//Defensive Secondary Stats
-	int blproc;			//Block Proc
 	int rEva,mEva;		//Evasion for Ranged and Melee attacks
+	int sDf,pDf,iDf;	//Armor Stats for Phyiscal attacks
+	int hDf,cDf,eDf;	//Armor Stats for Elemental attacks
+	int rDf,bDf,oDf;	//Armor Stats for Special attacks
 	
-	//Offensive Secondar Stats
-	int cproc;			//Crit Chance
-	int rAcc,mAcc;		//Accuracy for Ranged and Melle attacks
+	//Offensive Secondary Stats
+	int rAcc,mAcc;		//Accuracy for Ranged and Melee attacks
 	
 	//Armour Values
 	
@@ -82,13 +83,6 @@ public class Combatant {
 	public void calcDerStats()
 	{
 		HP = (str*2)+(edu*10);
-		cproc = (int) (dex*0.04);
-		blproc = (int) (edu*0.01);
-	}
-	
-	public int getcproc()
-	{
-		return cproc;
 	}
 	
 	public int gethealth()
