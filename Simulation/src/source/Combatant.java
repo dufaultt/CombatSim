@@ -45,6 +45,8 @@ public class Combatant {
 	double cblproc = 1;		//Constant Modifier for Block Chance
 	double physDBres = 1;	//Constant Modifier for Phyisical Debuff Resistance
 	double mentDBres = 1;	//Constant Modifier for Mental Debuff Resistance
+	double cmEva = 1;		//Constant Modifier for Melee Evasion
+	double crEva = 1;		//Constant Modifier for Ranged Evasion
 	
 	//Offensive Modifiers
 	double ccproc = 1;		//Constant Modifier for Crit Chance
