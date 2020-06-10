@@ -85,7 +85,7 @@ public class Combatant {
 		rAcc = rAcc + (dex*0.001);
 		mAcc = mAcc + (agi*0.001);
 		ccproc = ccproc + (per*0.0005);
-		ccdproc = ccdproc + (itl*0.005);
+		ccdproc = ccdproc + (itl*0.0005);
 		melDam = melDam + (str*0.001);
 		rEva = agi*0.1;
 		mEva = agi*0.1;
