@@ -69,8 +69,8 @@ public class Combatant {
 		str = Str;
 		edu = End;
 		dex = Dex;
-		edu = End;
 		itl = Itl;
+		wil = Wil;
 		agi = Agi;
 		per = Per;
 		wep1 = wep;
@@ -89,6 +89,11 @@ public class Combatant {
 		melDam = melDam + (str*0.001);
 		rEva = agi*0.1;
 		mEva = agi*0.1;
+		physDBres = physDBres + (edu*0.001);
+		mentDBres = mentDBres + (wil*0.001);
+		physDBproc = physDBproc + ((itl*0.0005) + (per*0.0005));
+		mentDBproc = mentDBproc + ((itl*0.0005) + (wil*0.0005));
+		
 	}
 	
 	public int gethealth()
