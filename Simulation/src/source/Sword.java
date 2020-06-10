@@ -13,12 +13,12 @@ public class Sword extends Weapon{
 		accur = 1;
 	}
 	
-	public int getatlow()
+	public double getatlow()
 	{
 		return atlow;
 	}
 	
-	public int getathigh()
+	public double getathigh()
 	{
 		return athigh;
 	}
