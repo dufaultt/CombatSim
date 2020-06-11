@@ -6,6 +6,17 @@ public class Sword extends Weapon{
 	int athigh;
 	float accur;
 	
+	int sAt = 50;
+	int pAt = 50;
+	int iAt = 30;
+	int hAt = 0;
+	int cAt = 0;
+	int eAt = 0;
+	int rAt = 0;
+	int bAt = 0;
+	int oAt = 0;
+	
+	
 	public Sword()
 	{
 		atlow = 25;

@@ -101,12 +101,12 @@ public class Combatant {
 		return HP;
 	}
 	
-	public int getatlow()
+	public double getatlow()
 	{
 		return wep1.getatlow();
 	}
 	
-	public int getathigh()
+	public double getathigh()
 	{
 		return wep1.getathigh();
 	}
