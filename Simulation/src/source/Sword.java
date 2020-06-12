@@ -4,7 +4,9 @@ public class Sword extends Weapon{
 	
 	double atlow;
 	double athigh;
-	float accur;
+	double accur;
+	double cChance;
+	double cDam;
 	
 	int sAt = 50;
 	int pAt = 50;
@@ -34,7 +36,7 @@ public class Sword extends Weapon{
 		return athigh;
 	}
 	
-	public float getaccur()
+	public double getaccur()
 	{
 		return accur;
 	}

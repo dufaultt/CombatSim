@@ -121,5 +121,18 @@ public class Combatant {
 		HP = initialHP;
 	}
 	
+	public void setArmor(int isDf,int ipDf,int iiDf,int ihDf,int icDf,int ieDf,int irDf,int ibDf,int ioDf)
+	{
+		sDf = isDf;
+		pDf = ipDf;
+		iDf = iiDf;
+		hDf = ihDf;
+		cDf = icDf;
+		eDf = ieDf;
+		rDf = irDf;
+		bDf = ibDf;
+		oDf = ioDf;
+	}
+	
 		
 }
