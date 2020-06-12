@@ -66,7 +66,7 @@ public class Main {
 			{	
 				nexround = 0;
 				//Turn1
-				dam = random.ints(c1.getatlow(),(c1.getathigh()+1)).findFirst().getAsInt();
+				dam = (int) random.doubles(c1.getatlow(),(c1.getathigh()+1)).findFirst().getAsDouble();
 				bl = random2.ints(0,(100+1)).findFirst().getAsInt();
 				fr2.write("C1 attacks\n");
 				
@@ -97,7 +97,7 @@ public class Main {
 				else
 				{
 					c2.sethealth(calchealth);
-					fr2.write("C2 now has " + c2.gethealth() + " health\n");
+					fr2.write("C2 to " + c2.gethealth() + " health\n");
 				}
 				
 				
@@ -110,7 +110,7 @@ public class Main {
 				//Turn2
 				if(nexround == 0)
 				{
-					dam = random.ints(c2.getatlow(),(c2.getathigh()+1)).findFirst().getAsInt();
+					dam = (int) random.doubles(c2.getatlow(),(c2.getathigh()+1)).findFirst().getAsDouble();
 					bl = random2.ints(0,(100+1)).findFirst().getAsInt();
 					fr2.write("C2 attacks\n");
 					
@@ -138,7 +138,7 @@ public class Main {
 					else
 					{
 							c1.sethealth(calchealth);
-							fr2.write("C1 now has " + c1.gethealth() + " health\n");
+							fr2.write("C1 to " + c1.gethealth() + " health\n");
 					}
 					damstat = damstat+dam;
 				}
