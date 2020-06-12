@@ -2,8 +2,8 @@ package source;
 
 public class Sword extends Weapon{
 	
-	int atlow;
-	int athigh;
+	double atlow;
+	double athigh;
 	float accur;
 	
 	int sAt = 50;
@@ -19,8 +19,8 @@ public class Sword extends Weapon{
 	
 	public Sword()
 	{
-		atlow = 25;
-		athigh = 50;
+		atlow = 0.8;
+		athigh = 1.2;
 		accur = 1;
 	}
 	

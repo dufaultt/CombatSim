@@ -14,7 +14,7 @@ public class Main {
 		
 		//Combatant 1
 		str1 = 100;
-		edu1 = 100;
+		edu1 = 110;
 		dex1 = 50;
 		wil1 = 50;
 		itl1 = 50;

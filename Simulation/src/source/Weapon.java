@@ -6,7 +6,7 @@ public abstract class Weapon {
 	
 	double atlow; 		//Low-Variance
 	double athigh;		//High-Variance
-	double cChance;	//Crit Chance
+	double cChance;		//Crit Chance
 	double cDam;		//Crit Damage
 	
 	int sAt,pAt,iAt; //Attack values for Slash, Pierce, and Impact (Physical)
