@@ -12,6 +12,8 @@ public abstract class Weapon {
 	int sAt,pAt,iAt; //Attack values for Slash, Pierce, and Impact (Physical)
 	int hAt,cAt,eAt; //Attack values for Heat, Cold, and Electric (Elemental)
 	int rAt,bAt,oAt; //Attack values for Radioactive, Blast, and Corrosice (Special)
+	
+	int moves;
 
 	
 	public double getatlow()
@@ -22,6 +24,11 @@ public abstract class Weapon {
 	public double getathigh()
 	{
 		return athigh;
+	}
+	
+	public void moveselect()
+	{
+		
 	}
 	
 }

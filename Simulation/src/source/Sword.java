@@ -1,5 +1,8 @@
 package source;
 
+import java.util.Date;
+import java.util.Random;
+
 public class Sword extends Weapon{
 	
 	double atlow;
@@ -18,12 +21,12 @@ public class Sword extends Weapon{
 	int bAt = 0;
 	int oAt = 0;
 	
+	int moves = 1;
 	
 	public Sword()
 	{
 		atlow = 0.8;
 		athigh = 1.2;
-		accur = 1;
 	}
 	
 	public double getatlow()
@@ -36,9 +39,10 @@ public class Sword extends Weapon{
 		return athigh;
 	}
 	
-	public double getaccur()
+	public void moveselect()
 	{
-		return accur;
+		Random random = new Random((int) (new Date().getTime()/1000));
+		random.ints(1,(moves+1)).findFirst().getAsInt();
 	}
-
+	
 }
