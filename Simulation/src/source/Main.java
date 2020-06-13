@@ -139,7 +139,30 @@ public class Main {
 				//Turn2
 				if(nexround == 0)
 				{
-					dam = (int) random.doubles(c2.getatlow(),(c2.getathigh()+1)).findFirst().getAsDouble();
+					
+					c2.wep1.moveselect();
+					hits = c2.wep1.getHits();
+					dam = 0;
+					for(int i = 0; i<hits; i++)
+					{
+						vardam = random.doubles(c2.wep1.getatlow(),(c2.wep1.getathigh())).findFirst().getAsDouble();
+						curDam = c2.wep1.getdam();
+						curArm = c2.getArmor();
+						for(int j = 0;j<9;j++)
+						{
+							indam = (curDam[j]*vardam)-curArm[j];
+
+							dam = dam + (int)indam;
+							
+						}
+						
+						if(dam < 1)
+						{
+							dam = 1;
+						}
+						
+					}
+
 					bl = random2.ints(0,(100+1)).findFirst().getAsInt();
 					fr2.write("C2 attacks\n");
 					
