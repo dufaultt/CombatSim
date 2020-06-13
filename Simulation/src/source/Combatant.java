@@ -26,6 +26,7 @@ public class Combatant {
 	//Defensive Secondary Stats
 	double mEva;		//Evasion for Melee attacks
 	double rEva;		//Evasion for Ranged attacks
+	int[] arm = {0,0,0,0,0,0,0,0,0};
 	int sDf,pDf,iDf;	//Armor Stats for Phyiscal attacks
 	int hDf,cDf,eDf;	//Armor Stats for Elemental attacks
 	int rDf,bDf,oDf;	//Armor Stats for Special attacks
@@ -121,10 +122,10 @@ public class Combatant {
 		HP = initialHP;
 	}
 	
-	public void setArmor(int isDf,int ipDf,int iiDf,int ihDf,int icDf,int ieDf,int irDf,int ibDf,int ioDf)
+	public void setArmor(int ipDf,int isDf,int iiDf,int ihDf,int icDf,int ieDf,int irDf,int ibDf,int ioDf)
 	{
-		sDf = isDf;
 		pDf = ipDf;
+		sDf = isDf;
 		iDf = iiDf;
 		hDf = ihDf;
 		cDf = icDf;
@@ -132,6 +133,21 @@ public class Combatant {
 		rDf = irDf;
 		bDf = ibDf;
 		oDf = ioDf;
+		updateArmor();
+		
+	}
+	
+	public void updateArmor()
+	{
+		arm[0] = pDf;
+		arm[1] = sDf;
+		arm[2] = iDf;
+		arm[3] = hDf;
+		arm[4] = cDf;
+		arm[5] = eDf;
+		arm[6] = rDf;
+		arm[7] = bDf;
+		arm[8] = oDf;
 	}
 	
 		

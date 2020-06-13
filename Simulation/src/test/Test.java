@@ -12,7 +12,7 @@ public class Test {
 		int d;
 		
 		
-		for(int i=0; i<100;i++)
+		for(int i=0; i<9;i++)
 		{
 			d = random.ints(1,(2)).findFirst().getAsInt();
 			System.out.println(d);

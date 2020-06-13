@@ -9,7 +9,7 @@ public abstract class Weapon {
 	double cChance;		//Crit Chance
 	double cDam;		//Crit Damage
 	
-	int sAt,pAt,iAt; //Attack values for Slash, Pierce, and Impact (Physical)
+	int pAt,sAt,iAt; //Attack values for Slash, Pierce, and Impact (Physical)
 	int hAt,cAt,eAt; //Attack values for Heat, Cold, and Electric (Elemental)
 	int rAt,bAt,oAt; //Attack values for Radioactive, Blast, and Corrosice (Special)
 	

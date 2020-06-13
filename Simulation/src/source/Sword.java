@@ -8,11 +8,15 @@ public class Sword extends Weapon{
 	double atlow;
 	double athigh;
 	double accur;
-	double cChance;
-	double cDam;
+	double cChance = 25;
+	double cDam = 2;
+	int[] curDam = {0,0,0,0,0,0,0,0,0};
 	
-	int sAt = 50;
+	
+	String movName;
+
 	int pAt = 50;
+	int sAt = 50;	
 	int iAt = 30;
 	int hAt = 0;
 	int cAt = 0;
@@ -22,6 +26,8 @@ public class Sword extends Weapon{
 	int oAt = 0;
 	
 	int moves = 1;
+	int movSelect;
+	
 	
 	public Sword()
 	{
@@ -42,7 +48,26 @@ public class Sword extends Weapon{
 	public void moveselect()
 	{
 		Random random = new Random((int) (new Date().getTime()/1000));
-		random.ints(1,(moves+1)).findFirst().getAsInt();
+		movSelect = random.ints(1,(moves+1)).findFirst().getAsInt();
+		//Resetting damage
+		for(int i = 0; i<9; i++)
+		{
+			curDam[i] = 0;
+		}
+		
+		if(movSelect == 1)
+		{
+			movName = "Slash";
+			curDam[0]=sAt;
+			accur = 75;
+			
+		}
+		else
+		{
+			System.out.println("error, move select issue");
+		}
 	}
+	
+	
 	
 }
