@@ -42,7 +42,7 @@ public class Main {
 		c1.setArmor(0, 0, 0, 0, 0, 0, 0, 0, 0);
 		c2.setArmor(0, 0, 0, 0, 0, 0, 0, 0, 0);
 		
-		int dam,indam,bl,hits;
+		int dam,bl,hits;
 		int rounds = 0, sets = 0;
 		int c1wins = 0, c2wins = 0;
 		int nexround = 0;
@@ -51,7 +51,7 @@ public class Main {
 		int damstat = 0;
 		int[] curDam = {0,0,0,0,0,0,0,0,0};
 		int[] curArm = {0,0,0,0,0,0,0,0,0};
-		double vardam;
+		double vardam,indam;
 		Random random = new Random((int) (new Date().getTime()/1000));
 		Random random2 = new Random((int) (new Date().getTime()/1000)+1);
 		
@@ -66,9 +66,9 @@ public class Main {
         
 		
 
-		while(sets<100)
+		while(sets<10)
 		{
-			while(rounds<100)
+			while(rounds<10)
 			{	
 				nexround = 0;
 				//Turn1
@@ -77,26 +77,25 @@ public class Main {
 				dam = 0;
 				for(int i = 0; i<hits; i++)
 				{
-					vardam = random.doubles(c1.getatlow(),(c1.getathigh()+1)).findFirst().getAsDouble();
+					vardam = random.doubles(c1.wep1.getatlow(),(c1.wep1.getathigh())).findFirst().getAsDouble();
 					curDam = c1.wep1.getdam();
 					curArm = c1.getArmor();
-					
 					for(int j = 0;j<9;j++)
 					{
-						indam = (int)(curDam[j]*vardam)-curArm[j];
+						indam = (curDam[j]*vardam)-curArm[j];
+
+						dam = dam + (int)indam;
 						
-						if(indam < 1)
-						{
-							indam = 1;
-						}
-						dam = dam + indam;
-						
+					}
+					
+					if(dam < 1)
+					{
+						dam = 1;
 					}
 					
 				}
 				
 				
-				dam = (int) random.doubles(c1.getatlow(),(c1.getathigh()+1)).findFirst().getAsDouble();
 				bl = random2.ints(0,(100+1)).findFirst().getAsInt();
 				fr2.write("C1 attacks\n");
 				
