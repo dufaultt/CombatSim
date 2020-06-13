@@ -11,6 +11,7 @@ public class Sword extends Weapon{
 	double cChance = 25;
 	double cDam = 2;
 	int[] curDam = {0,0,0,0,0,0,0,0,0};
+	int hits;
 	
 	
 	String movName;
@@ -54,18 +55,30 @@ public class Sword extends Weapon{
 		{
 			curDam[i] = 0;
 		}
+		hits = 0;
 		
 		if(movSelect == 1)
 		{
 			movName = "Slash";
-			curDam[0]=sAt;
+			curDam[1]=sAt;
 			accur = 75;
+			hits = 1;
 			
 		}
 		else
 		{
 			System.out.println("error, move select issue");
 		}
+	}
+	
+	public int getHits()
+	{
+		return hits;
+	}
+	
+	public int[] getdam()
+	{
+		return curDam;
 	}
 	
 	

@@ -8,12 +8,13 @@ public abstract class Weapon {
 	double athigh;		//High-Variance
 	double cChance;		//Crit Chance
 	double cDam;		//Crit Damage
+	int[] curDam = {0,0,0,0,0,0,0,0,0}; //Current Damage
 	
 	int pAt,sAt,iAt; //Attack values for Slash, Pierce, and Impact (Physical)
 	int hAt,cAt,eAt; //Attack values for Heat, Cold, and Electric (Elemental)
 	int rAt,bAt,oAt; //Attack values for Radioactive, Blast, and Corrosice (Special)
 	
-	int moves;
+	int moves,hits;
 
 	
 	public double getatlow()
@@ -29,6 +30,16 @@ public abstract class Weapon {
 	public void moveselect()
 	{
 		
+	}
+	
+	public int getHits()
+	{
+		return hits;
+	}
+	
+	public int[] getdam()
+	{
+		return curDam;
 	}
 	
 }

@@ -150,5 +150,10 @@ public class Combatant {
 		arm[8] = oDf;
 	}
 	
+	public int[] getArmor()
+	{
+		return arm;
+	}
+	
 		
 }
