@@ -72,23 +72,28 @@ public class Main {
 			{	
 				nexround = 0;
 				//Turn1
-				c1.wep1.moveselect();
-				hits = c1.wep1.getHits();
-				dam = 0;
+				
+				c1.wep1.moveselect();//select move
+				hits = c1.wep1.getHits();//get number of hits
+				dam = 0;//reset damage
 				for(int i = 0; i<hits; i++)
 				{
 					vardam = random.doubles(c1.wep1.getatlow(),(c1.wep1.getathigh())).findFirst().getAsDouble();
 					curDam = c1.wep1.getdam();
-					curArm = c1.getArmor();
+					curArm = c2.getArmor();
 					for(int j = 0;j<9;j++)
 					{
 						indam = (curDam[j]*vardam)-curArm[j];
-
+						if(indam < 0)
+						{
+							indam = 0;
+						}
+						
 						dam = dam + (int)indam;
 						
 					}
 					
-					if(dam < 1)
+					if(dam < 1) 
 					{
 						dam = 1;
 					}
@@ -147,11 +152,15 @@ public class Main {
 					{
 						vardam = random.doubles(c2.wep1.getatlow(),(c2.wep1.getathigh())).findFirst().getAsDouble();
 						curDam = c2.wep1.getdam();
-						curArm = c2.getArmor();
+						curArm = c1.getArmor();
 						for(int j = 0;j<9;j++)
 						{
 							indam = (curDam[j]*vardam)-curArm[j];
-
+							if(indam < 0)
+							{
+								indam = 0;
+							}
+							
 							dam = dam + (int)indam;
 							
 						}
