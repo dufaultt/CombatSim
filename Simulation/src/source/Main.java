@@ -42,7 +42,7 @@ public class Main {
 		c1.setArmor(0, 0, 0, 0, 0, 0, 0, 0, 0);
 		c2.setArmor(0, 0, 0, 0, 0, 0, 0, 0, 0);
 		
-		int dam,bl,hits;
+		int dam,bl,hits,wHits,accur,mark;
 		int rounds = 0, sets = 0;
 		int c1wins = 0, c2wins = 0;
 		int nexround = 0;
@@ -74,9 +74,22 @@ public class Main {
 				//Turn1
 				
 				c1.wep1.moveselect();//select move
-				hits = c1.wep1.getHits();//get number of hits
+				wHits = c1.wep1.getHits();//get number of hits
 				dam = 0;//reset damage
-				for(int i = 0; i<hits; i++)
+				hits = 0;
+				accur = c1.wep1.getAccur();
+
+				for(int i = 0; i<wHits; i++)//calculate misses/hits
+				{
+					mark = random2.ints(0,(100+1)).findFirst().getAsInt();
+					if(mark < accur)
+					{
+						hits++;
+					}
+					
+				}
+				
+				for(int i = 0; i<hits; i++)//Calculate total damage
 				{
 					vardam = random.doubles(c1.wep1.getatlow(),(c1.wep1.getathigh())).findFirst().getAsDouble();
 					curDam = c1.wep1.getdam();
@@ -84,6 +97,7 @@ public class Main {
 					for(int j = 0;j<9;j++)
 					{
 						indam = (curDam[j]*vardam)-curArm[j];
+						
 						if(indam < 0)
 						{
 							indam = 0;
@@ -145,9 +159,22 @@ public class Main {
 				if(nexround == 0)
 				{
 					
-					c2.wep1.moveselect();
-					hits = c2.wep1.getHits();
-					dam = 0;
+					c2.wep1.moveselect();//select move
+					wHits = c2.wep1.getHits();//get number of hits
+					dam = 0;//reset damage
+					hits = 0;
+					accur = c2.wep1.getAccur();
+
+					for(int i = 0; i<wHits; i++)//calculate misses/hits
+					{
+						mark = random2.ints(0,(100+1)).findFirst().getAsInt();
+						if(mark < accur)
+						{
+							hits++;
+						}
+						
+					}
+					
 					for(int i = 0; i<hits; i++)
 					{
 						vardam = random.doubles(c2.wep1.getatlow(),(c2.wep1.getathigh())).findFirst().getAsDouble();

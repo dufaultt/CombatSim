@@ -7,11 +7,12 @@ public class Sword extends Weapon{
 	
 	double atlow;
 	double athigh;
-	double accur;
+	int accur;
 	double cChance = 25;
 	double cDam = 2;
 	int[] curDam = {0,0,0,0,0,0,0,0,0};
 	int hits;
+	char atType;
 	
 	
 	String movName;
@@ -63,6 +64,8 @@ public class Sword extends Weapon{
 			curDam[1]=sAt;
 			accur = 75;
 			hits = 1;
+			atType = 'M';
+			
 			
 		}
 		else
@@ -79,6 +82,11 @@ public class Sword extends Weapon{
 	public int[] getdam()
 	{
 		return curDam;
+	}
+	
+	public int getAccur()
+	{
+		return accur;
 	}
 	
 	
