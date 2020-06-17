@@ -106,7 +106,7 @@ public class Main {
 						dam = dam + (int)indam;
 						
 					}
-					
+					 
 					if(dam < 1) 
 					{
 						dam = 1;
