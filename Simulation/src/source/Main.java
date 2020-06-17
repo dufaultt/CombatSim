@@ -52,6 +52,7 @@ public class Main {
 		int[] curDam = {0,0,0,0,0,0,0,0,0};
 		int[] curArm = {0,0,0,0,0,0,0,0,0};
 		double vardam,indam;
+		String atkName;
 		Random random = new Random((int) (new Date().getTime()/1000));
 		Random random2 = new Random((int) (new Date().getTime()/1000)+1);
 		
@@ -78,6 +79,7 @@ public class Main {
 				dam = 0;//reset damage
 				hits = 0;
 				accur = c1.wep1.getAccur();
+				atkName = c1.wep1.getName();
 
 				for(int i = 0; i<wHits; i++)//calculate misses/hits
 				{
@@ -116,7 +118,7 @@ public class Main {
 				
 				
 				bl = random2.ints(0,(100+1)).findFirst().getAsInt();
-				fr2.write("C1 attacks\n");
+				fr2.write("C1 attacks using " + atkName + "\n");
 				
 				if(bproc2 > bl)
 				{
@@ -164,6 +166,7 @@ public class Main {
 					dam = 0;//reset damage
 					hits = 0;
 					accur = c2.wep1.getAccur();
+					atkName = c2.wep1.getName();
 
 					for(int i = 0; i<wHits; i++)//calculate misses/hits
 					{
@@ -200,7 +203,7 @@ public class Main {
 					}
 
 					bl = random2.ints(0,(100+1)).findFirst().getAsInt();
-					fr2.write("C2 attacks\n");
+					fr2.write("C2 attacks " + atkName + "\n");
 					
 					if(bproc1 > bl)
 					{

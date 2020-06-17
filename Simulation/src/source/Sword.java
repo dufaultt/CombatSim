@@ -27,9 +27,10 @@ public class Sword extends Weapon{
 	int bAt = 0;
 	int oAt = 0;
 	
-	int moves = 1;
+	int moves = 2;
 	int movSelect;
 	
+	Random random = new Random((int) (new Date().getTime()/1000));
 	
 	public Sword()
 	{
@@ -49,8 +50,9 @@ public class Sword extends Weapon{
 	
 	public void moveselect()
 	{
-		Random random = new Random((int) (new Date().getTime()/1000));
+		
 		movSelect = random.ints(1,(moves+1)).findFirst().getAsInt();
+		System.out.println(movSelect);
 		//Resetting damage
 		for(int i = 0; i<9; i++)
 		{
@@ -65,8 +67,15 @@ public class Sword extends Weapon{
 			accur = 75;
 			hits = 1;
 			atType = 'M';
+		}
+		else if(movSelect == 2)
+		{
+			movName = "Double Slash";
+			curDam[1]=(int)(0.75*sAt);
 			
-			
+			accur = 50;
+			hits = 2;
+			atType = 'M';
 		}
 		else
 		{
@@ -87,6 +96,11 @@ public class Sword extends Weapon{
 	public int getAccur()
 	{
 		return accur;
+	}
+	
+	public String getName()
+	{
+		return movName;
 	}
 	
 	

@@ -10,6 +10,7 @@ public abstract class Weapon {
 	double cDam;		//Crit Damage
 	int[] curDam = {0,0,0,0,0,0,0,0,0}; //Current Damage
 	int accur;
+	String movName;
 	
 	int pAt,sAt,iAt; //Attack values for Slash, Pierce, and Impact (Physical)
 	int hAt,cAt,eAt; //Attack values for Heat, Cold, and Electric (Elemental)
@@ -46,6 +47,11 @@ public abstract class Weapon {
 	public int getAccur()
 	{
 		return accur;
+	}
+	
+	public String getName()
+	{
+		return movName;
 	}
 	
 }
