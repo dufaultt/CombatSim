@@ -176,7 +176,7 @@ public class Main {
 							hits++;
 						}
 						
-					}
+					} 
 					
 					for(int i = 0; i<hits; i++)
 					{
