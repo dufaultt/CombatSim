@@ -5,6 +5,12 @@ import java.util.Random;
 
 public class Main {
 	
+	static Random rGlobal = new Random((int) (new Date().getTime()/1000)+2);
+	static double vardam;
+	double indam;
+	static int[] curDam = {0,0,0,0,0,0,0,0,0};
+	static int[] curArm = {0,0,0,0,0,0,0,0,0};
+	static String atkName;
 	
 	public static void main(String args[]) throws IOException
 	{
@@ -51,10 +57,9 @@ public class Main {
 		int calchealth;						//Check health after damage
 		int blstat=0,blstat2=0;				//Legacy Block stats
 		int damstat = 0;
-		int[] curDam = {0,0,0,0,0,0,0,0,0};
-		int[] curArm = {0,0,0,0,0,0,0,0,0};
-		double vardam,indam;
-		String atkName;
+
+		
+		
 		Random random = new Random((int) (new Date().getTime()/1000));
 		Random random2 = new Random((int) (new Date().getTime()/1000)+1);
 		
@@ -75,49 +80,7 @@ public class Main {
 			{	
 				nexround = 0;
 				//Turn1
-				
-				c1.wep1.moveselect();//select move
-				wHits = c1.wep1.getHits();//get number of hits
-				dam = 0;//reset damage
-				hits = 0;
-				accur = c1.wep1.getAccur();
-				atkName = c1.wep1.getName();
-
-				for(int i = 0; i<wHits; i++)//calculate misses/hits
-				{
-					mark = random2.ints(0,(100+1)).findFirst().getAsInt();
-					if(mark < accur)
-					{
-						hits++;
-					}
-					
-				}
-				
-				for(int i = 0; i<hits; i++)//Calculate total damage
-				{
-					vardam = random.doubles(c1.wep1.getatlow(),(c1.wep1.getathigh())).findFirst().getAsDouble();
-					curDam = c1.wep1.getdam();
-					curArm = c2.getArmor();
-					for(int j = 0;j<9;j++)
-					{
-						indam = (curDam[j]*vardam)-curArm[j];
-						
-						if(indam < 0)
-						{
-							indam = 0;
-						}
-						
-						dam = dam + (int)indam;
-						
-					}
-					 
-					if(dam < 1) 
-					{
-						dam = 1;
-					}
-					
-				}
-				
+				dam = attack(c1,c2);
 				
 				bl = random2.ints(0,(100+1)).findFirst().getAsInt();
 				fr2.write("C1 attacks using " + atkName + "\n");
@@ -162,47 +125,8 @@ public class Main {
 				//Turn2
 				if(nexround == 0)
 				{
+					dam = attack(c2,c1);
 					
-					c2.wep1.moveselect();//select move
-					wHits = c2.wep1.getHits();//get number of hits
-					dam = 0;//reset damage
-					hits = 0;
-					accur = c2.wep1.getAccur();
-					atkName = c2.wep1.getName();
-
-					for(int i = 0; i<wHits; i++)//calculate misses/hits
-					{
-						mark = random2.ints(0,(100+1)).findFirst().getAsInt();
-						if(mark < accur)
-						{
-							hits++;
-						}
-						 
-					} 
-					
-					for(int i = 0; i<hits; i++)
-					{
-						vardam = random.doubles(c2.wep1.getatlow(),(c2.wep1.getathigh())).findFirst().getAsDouble();
-						curDam = c2.wep1.getdam();
-						curArm = c1.getArmor();
-						for(int j = 0;j<9;j++)
-						{
-							indam = (curDam[j]*vardam)-curArm[j];
-							if(indam < 0)
-							{
-								indam = 0;
-							}
-							
-							dam = dam + (int)indam;
-							
-						}
-						
-						if(dam < 1)
-						{
-							dam = 1;
-						}
-						
-					}
 
 					bl = random2.ints(0,(100+1)).findFirst().getAsInt();
 					fr2.write("C2 attacks " + atkName + "\n");
@@ -254,5 +178,48 @@ public class Main {
 
 				
 	}
+	
+	public static int attack(Combatant com1, Combatant com2)
+	{
+		com1.wep1.moveselect();//select move
+		int wHits = com1.wep1.getHits();//get number of hits
+		int dam = 0;//reset damage
+		double indam = 0;
+		int hits = 0;
+		int accur = com1.wep1.getAccur();
+		atkName = com1.wep1.getName();
 
+		for(int i = 0; i<wHits; i++)//calculate misses/hits
+		{
+			int mark = rGlobal.ints(0,(100+1)).findFirst().getAsInt();
+			if(mark < accur)
+			{
+				hits++;
+			}
+			
+		}
+		
+		for(int i = 0; i<hits; i++)//Calculate total damage
+		{
+			vardam = rGlobal.doubles(com1.wep1.getatlow(),(com1.wep1.getathigh())).findFirst().getAsDouble();
+			curDam = com1.wep1.getdam();
+			curArm = com2.getArmor();
+			for(int j = 0;j<9;j++)
+			{
+				indam = (curDam[j]*vardam)-curArm[j];
+				
+				if(indam < 0)
+				{
+					indam = 1;
+				}
+				
+				dam = dam + (int)indam;
+				
+			}
+			 
+		}
+		
+		return dam;
+	
+	}
 }

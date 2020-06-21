@@ -52,7 +52,7 @@ public class Sword extends Weapon{
 	{
 		
 		movSelect = random.ints(1,(moves+1)).findFirst().getAsInt();
-		System.out.println(movSelect);
+		//System.out.println(movSelect);
 		//Resetting damage
 		for(int i = 0; i<9; i++)
 		{
