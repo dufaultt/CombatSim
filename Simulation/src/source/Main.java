@@ -5,10 +5,12 @@ import java.util.Random;
 
 public class Main {
 	
+	
 	public static void main(String args[]) throws IOException
 	{
+			
 		Combatant c1,c2;
-		int str1,str2,edu1,edu2,dex1,dex2,wil1,wil2,itl1,itl2,agi1,agi2,per1,per2,lAtk1,lAtk2,hAtk1,hAtk2;
+		int str1,str2,edu1,edu2,dex1,dex2,wil1,wil2,itl1,itl2,agi1,agi2,per1,per2;
 		int bproc1,bproc2;
 		Weapon wep1,wep2;
 		
@@ -248,6 +250,8 @@ public class Main {
 		fr.write("Damage Mitigated: "+Integer.toString(blstat2)+"\n");
 		fr.close();
 		fr2.close();
+	
+
 				
 	}
 
