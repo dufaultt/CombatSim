@@ -18,6 +18,7 @@ public abstract class Weapon {
 	
 	int moves,hits;
 
+	public double getcChance;
 	
 	public double getatlow()
 	{

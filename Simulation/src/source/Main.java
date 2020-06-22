@@ -210,7 +210,7 @@ public class Main {
 				
 				if(indam < 0)
 				{
-					indam = 1;
+					indam = 0;
 				}
 				
 				dam = dam + (int)indam;
@@ -219,6 +219,10 @@ public class Main {
 			 
 		}
 		
+		if(dam < hits)
+		{
+			dam = hits;
+		}
 		return dam;
 	
 	}
