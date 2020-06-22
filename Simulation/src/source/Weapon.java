@@ -18,7 +18,15 @@ public abstract class Weapon {
 	
 	int moves,hits;
 
-	public double getcChance;
+	public double getcDam()
+	{
+		return cDam;
+	}
+	
+	public double getcChance()
+	{
+		return cChance;
+	}
 	
 	public double getatlow()
 	{
