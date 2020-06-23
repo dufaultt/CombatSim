@@ -47,8 +47,8 @@ public class Main {
 		c1 = new Combatant(str1,edu1,dex1,wil1,itl1,agi1,per1,wep1);
 		c2 = new Combatant(str2,edu2,dex2,wil2,itl2,agi2,per2,wep2);
 		
-		c1.setArmor(0, 0, 0, 0, 0, 0, 0, 0, 0);
-		c2.setArmor(0, 0, 0, 0, 0, 0, 0, 0, 0);
+		c1.setArmor(0, 1000, 0, 0, 0, 0, 0, 0, 0);
+		c2.setArmor(0, 1000, 0, 0, 0, 0, 0, 0, 0);
 		
 		int dam,bl,hits,wHits,accur,mark;
 		int rounds = 0, sets = 0;
@@ -93,8 +93,6 @@ public class Main {
 					fr2.write("Blocked!\n");
 				}
 				
-				if(dam<=0)
-					dam=1;
 				
 				
 				calchealth = c2.gethealth() - dam;
@@ -105,9 +103,7 @@ public class Main {
 					c1.resethealth();
 					rounds++;
 					c1wins++;
-					fr2.write("C1 wins round\n\n");
-					
-					
+					fr2.write("C1 wins round\n\n");			
 				}
 				else
 				{
@@ -129,7 +125,7 @@ public class Main {
 					
 
 					bl = random2.ints(0,(100+1)).findFirst().getAsInt();
-					fr2.write("C2 attacks " + atkName + "\n");
+					fr2.write("C2 attacks using " + atkName + "\n");
 					
 					if(bproc1 > bl)
 					{
@@ -138,8 +134,6 @@ public class Main {
 						
 					}
 					
-					if(dam<=0)
-						dam=1;
 					
 					calchealth = c1.gethealth() - dam;
 					fr2.write("C1 takes " + dam + " damage\n");
@@ -198,6 +192,9 @@ public class Main {
 			}
 			
 		}
+		
+		if(hits == 0)
+			return 0;
 		
 		for(int i = 0; i<hits; i++)//Calculate total damage
 		{

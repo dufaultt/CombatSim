@@ -7,9 +7,9 @@ public class Sword extends Weapon{
 	
 	double atlow;
 	double athigh;
-	int accur;
-	double cChance = 25;
-	double cDam = 2;
+	int accur,bl;
+	double cChance;
+	double cDam;
 	int[] curDam = {0,0,0,0,0,0,0,0,0};
 	int hits;
 	char atType;
@@ -36,6 +36,9 @@ public class Sword extends Weapon{
 	{
 		atlow = 0.8;
 		athigh = 1.2;
+		bl = 5;
+		cChance = 25;
+		cDam = 2;
 	}
 	
 	public double getatlow()
