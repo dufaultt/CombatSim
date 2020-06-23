@@ -117,6 +117,16 @@ public class Combatant {
 		HP = health;
 	}
 	
+	public double getWepcChance()
+	{
+		return wep1.getcChance()*ccproc;
+	}
+	
+	public double  getWepcdChance()
+	{
+		return wep1.getcDam()*ccdproc;
+	}
+	
 	public void resethealth()
 	{
 		HP = initialHP;
