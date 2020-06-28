@@ -122,7 +122,7 @@ public class Combatant {
 		return wep1.getcChance()*ccproc;
 	}
 	
-	public double  getWepcdChance()
+	public double  getWepcdam()
 	{
 		return wep1.getcDam()*ccdproc;
 	}

@@ -7,10 +7,13 @@ public class Main {
 	
 	static Random rGlobal = new Random((int) (new Date().getTime()/1000)+2);
 	static double vardam;
+	static double varcrit;
 	double indam;
 	static int[] curDam = {0,0,0,0,0,0,0,0,0};
 	static int[] curArm = {0,0,0,0,0,0,0,0,0};
 	static String atkName;
+	static FileWriter fr2 = null;
+	static File file2 = new File("H:/Work/Simulation/BattleLog.txt");
 	
 	public static void main(String args[]) throws IOException
 	{
@@ -64,9 +67,9 @@ public class Main {
 		Random random2 = new Random((int) (new Date().getTime()/1000)+1);
 		
 		File file = new File("H:/Work/Simulation/Specialout.txt");
-		File file2 = new File("H:/Work/Simulation/BattleLog.txt");
+		
         FileWriter fr = null;
-        FileWriter fr2 = null;
+        //FileWriter fr2 = null;
     
         fr = new FileWriter(file);
         fr2 = new FileWriter(file2);
@@ -173,7 +176,7 @@ public class Main {
 				
 	}
 	
-	public static int attack(Combatant com1, Combatant com2)
+	public static int attack(Combatant com1, Combatant com2) throws IOException
 	{
 		com1.wep1.moveselect();//select move
 		int wHits = com1.wep1.getHits();//get number of hits
@@ -181,6 +184,8 @@ public class Main {
 		double indam = 0;
 		int hits = 0;
 		int accur = com1.wep1.getAccur();
+		double crit = com1.getWepcChance();
+		double critd = com1.getWepcdam();
 		atkName = com1.wep1.getName();
 
 		for(int i = 0; i<wHits; i++)//calculate misses/hits
@@ -199,8 +204,16 @@ public class Main {
 		for(int i = 0; i<hits; i++)//Calculate total damage
 		{
 			vardam = rGlobal.doubles(com1.wep1.getatlow(),(com1.wep1.getathigh())).findFirst().getAsDouble();
+			varcrit = rGlobal.doubles(0,(100)).findFirst().getAsDouble();
 			curDam = com1.wep1.getdam();
 			curArm = com2.getArmor();
+			
+			if(crit > varcrit)
+			{
+				fr2.write("Crit! \n");
+				vardam = vardam*critd;
+			}
+			
 			for(int j = 0;j<9;j++)
 			{
 				indam = (curDam[j]*vardam)-curArm[j];
