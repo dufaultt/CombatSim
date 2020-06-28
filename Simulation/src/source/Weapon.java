@@ -9,7 +9,7 @@ public abstract class Weapon {
 	double cChance;		//Crit Chance
 	double cDam;		//Crit Damage
 	int[] curDam = {0,0,0,0,0,0,0,0,0}; //Current Damage
-	int accur,bl;
+	int accur;
 	String movName;
 	
 	int pAt,sAt,iAt; //Attack values for Slash, Pierce, and Impact (Physical)

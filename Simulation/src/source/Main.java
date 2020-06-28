@@ -184,7 +184,7 @@ public class Main {
 		atkName = com1.wep1.getName();
 
 		for(int i = 0; i<wHits; i++)//calculate misses/hits
-		{
+		{ 
 			int mark = rGlobal.ints(0,(100+1)).findFirst().getAsInt();
 			if(mark < accur)
 			{
