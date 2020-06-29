@@ -74,8 +74,7 @@ public class Sword extends Weapon{
 		else if(movSelect == 2)
 		{
 			movName = "Double Slash";
-			curDam[1]=(int)(0.75*sAt);
-			
+			curDam[1]=(int)(0.75*sAt);			
 			accur = 50;
 			hits = 2;
 			atType = 'M';
@@ -106,6 +105,13 @@ public class Sword extends Weapon{
 		return movName;
 	}
 	
+	public double getcChance()
+	{
+		return cChance;
+	}
 	
-	
+	public double getcDam()
+	{
+		return cDam;
+	}
 }

@@ -119,6 +119,7 @@ public class Combatant {
 	
 	public double getWepcChance()
 	{
+		//System.out.println(wep1.getcChance()+" multiplied by "+ccproc);
 		return wep1.getcChance()*ccproc;
 	}
 	

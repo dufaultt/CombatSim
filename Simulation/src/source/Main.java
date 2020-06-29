@@ -50,8 +50,8 @@ public class Main {
 		c1 = new Combatant(str1,edu1,dex1,wil1,itl1,agi1,per1,wep1);
 		c2 = new Combatant(str2,edu2,dex2,wil2,itl2,agi2,per2,wep2);
 		
-		c1.setArmor(0, 1000, 0, 0, 0, 0, 0, 0, 0);
-		c2.setArmor(0, 1000, 0, 0, 0, 0, 0, 0, 0);
+		c1.setArmor(0, 1, 0, 0, 0, 0, 0, 0, 0);
+		c2.setArmor(0, 1, 0, 0, 0, 0, 0, 0, 0);
 		
 		int dam,bl,hits,wHits,accur,mark;
 		int rounds = 0, sets = 0;
