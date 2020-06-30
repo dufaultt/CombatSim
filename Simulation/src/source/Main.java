@@ -32,7 +32,7 @@ public class Main {
 		agi1 = 50;
 		per1 = 50;
 		bproc1 = 0;
-		wep1 = new Sword();
+		wep1 = new Sword(); 
 		
 		
 		//Combatant 2
