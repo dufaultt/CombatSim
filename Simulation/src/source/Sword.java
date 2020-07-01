@@ -55,7 +55,6 @@ public class Sword extends Weapon{
 	{
 		
 		movSelect = random.ints(1,(moves+1)).findFirst().getAsInt();
-		//System.out.println(movSelect);
 		//Resetting damage
 		for(int i = 0; i<9; i++)
 		{
@@ -63,6 +62,7 @@ public class Sword extends Weapon{
 		}
 		hits = 0;
 		
+		//Choosing Move
 		if(movSelect == 1)
 		{
 			movName = "Slash";
