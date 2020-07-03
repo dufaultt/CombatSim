@@ -16,7 +16,8 @@ public class Sword extends Weapon{
 	
 	
 	String movName;
-
+	
+	//attack values
 	int pAt = 50;
 	int sAt = 50;	
 	int iAt = 30;
@@ -26,6 +27,18 @@ public class Sword extends Weapon{
 	int rAt = 0;
 	int bAt = 0;
 	int oAt = 0;
+	
+	//block values (%)
+	int bpAt = 60;
+	int bsAt = 90;	
+	int biAt = 15;
+	int bhAt = 5;
+	int bcAt = 5;
+	int beAt = 20;
+	int brAt = 1;
+	int bbAt = 2;
+	int boAt = 4;
+	
 	
 	int moves = 2;
 	int movSelect;
