@@ -39,6 +39,8 @@ public class Sword extends Weapon{
 	int bbAt = 2;
 	int boAt = 4;
 	
+	int[] blockDam = {bpAt,bsAt,biAt,bhAt,bcAt,beAt,brAt,bbAt,boAt};
+	
 	
 	int moves = 2;
 	int movSelect;
@@ -131,5 +133,10 @@ public class Sword extends Weapon{
 	public int getBlock()
 	{
 		return bl;
+	}
+	
+	public int[] getBlockA()
+	{
+		return blockDam;
 	}
 }

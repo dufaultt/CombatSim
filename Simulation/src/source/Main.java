@@ -8,6 +8,7 @@ public class Main {
 	static Random rGlobal = new Random((int) (new Date().getTime()/1000)+2);
 	static double vardam;
 	static double varcrit;
+	static int varblockc;
 	double indam;
 	static int[] curDam = {0,0,0,0,0,0,0,0,0};
 	static int[] curArm = {0,0,0,0,0,0,0,0,0};
@@ -233,5 +234,11 @@ public class Main {
 		}
 		return dam;
 	
+	}
+	
+	public static int[] Block(Combatant com1, Combatant com2, int dam[])
+	{
+		int chance = com1.getBlockC();
+		return dam;
 	}
 }

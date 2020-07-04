@@ -171,5 +171,10 @@ public class Combatant {
 		return wep1.getBlock();
 	}
 	
+	public int[] getBlockA()
+	{
+		return wep1.getBlockA();
+	}
+	
 		
 }

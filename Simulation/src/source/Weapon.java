@@ -16,6 +16,11 @@ public abstract class Weapon {
 	int hAt,cAt,eAt; //Attack values for Heat, Cold, and Electric (Elemental)
 	int rAt,bAt,oAt; //Attack values for Radioactive, Blast, and Corrosice (Special)
 	
+	int bpAt,bsAt,biAt; //Attack values for Slash, Pierce, and Impact (Physical)
+	int bhAt,bcAt,beAt; //Attack values for Heat, Cold, and Electric (Elemental)
+	int brAt,bbAt,boAt; //Attack values for Radioactive, Blast, and Corrosice (Special)
+	
+	int[] blockDam;
 	int moves,hits;
 
 	public double getcDam()
@@ -66,6 +71,11 @@ public abstract class Weapon {
 	public int getBlock()
 	{
 		return bl;
+	}
+	
+	public int[] getBlockA()
+	{
+		return blockDam;
 	}
 	
 }
