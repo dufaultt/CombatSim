@@ -127,4 +127,9 @@ public class Sword extends Weapon{
 	{
 		return cDam;
 	}
+	
+	public int getBlock()
+	{
+		return bl;
+	}
 }
