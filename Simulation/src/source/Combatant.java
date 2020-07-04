@@ -166,5 +166,10 @@ public class Combatant {
 		return arm;
 	}
 	
+	public int getBlockC()
+	{
+		return wep1.getBlock();
+	}
+	
 		
 }
