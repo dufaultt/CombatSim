@@ -236,9 +236,23 @@ public class Main {
 	
 	}
 	
-	public static int[] Block(Combatant com1, Combatant com2, int dam[])
+	public static void Block(Combatant com1, Combatant com2, int dam[])
 	{
 		int chance = com1.getBlockC();
-		return dam;
+		int mark = rGlobal.ints(0,(100+1)).findFirst().getAsInt();
+		int[] reduction;
+		
+		
+		if(mark<chance)
+		{
+			reduction = com1.getBlockA();
+			
+			for(int j = 0;j<9;j++)
+			{	
+				curDam[j] = curDam[j] - (int)(curDam[j]*(reduction[j]/100));	
+			}
+		}
+		
+		//return dam;
 	}
 }
