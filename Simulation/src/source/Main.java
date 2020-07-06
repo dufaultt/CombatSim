@@ -213,6 +213,8 @@ public class Main {
 				vardam = vardam*critd;
 			}
 			
+			Block(com1,com2);
+			
 			for(int j = 0;j<9;j++)
 			{
 				indam = (curDam[j]*vardam)-curArm[j];
@@ -236,20 +238,27 @@ public class Main {
 	
 	}
 	
-	public static void Block(Combatant com1, Combatant com2, int dam[])
+	public static void Block(Combatant com1, Combatant com2) throws IOException
 	{
 		int chance = com1.getBlockC();
 		int mark = rGlobal.ints(0,(100+1)).findFirst().getAsInt();
 		int[] reduction;
 		
 		
+		
 		if(mark<chance)
 		{
+			fr2.write("Block! \n");
 			reduction = com1.getBlockA();
 			
 			for(int j = 0;j<9;j++)
 			{	
-				curDam[j] = curDam[j] - (int)(curDam[j]*(reduction[j]/100));	
+				if(curDam[j] !=0)
+				{
+					System.out.println("Starts at "+curDam[j]+ "and will be affected by "+ ((float)curDam[j]*((float)reduction[j]/100)));
+					curDam[j] = (int)(curDam[j] - ((float)curDam[j]*((float)reduction[j]/100)));
+					System.out.println("Goes to "+curDam[j]);
+				}
 			}
 		}
 		
