@@ -255,9 +255,7 @@ public class Main {
 			{	
 				if(curDam[j] !=0)
 				{
-					System.out.println("Starts at "+curDam[j]+ "and will be affected by "+ ((float)curDam[j]*((float)reduction[j]/100)));
 					curDam[j] = (int)(curDam[j] - ((float)curDam[j]*((float)reduction[j]/100)));
-					System.out.println("Goes to "+curDam[j]);
 				}
 			}
 		}
