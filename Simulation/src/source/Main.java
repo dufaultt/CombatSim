@@ -187,19 +187,19 @@ public class Main {
 			curDam = com1.wep1.getdam();
 			curArm = com2.getArmor();
 			
-			if(crit > varcrit)
+			if(crit > varcrit)//Checking Crit Chance
 			{
 				fr2.write("Crit! \n");
 				vardam = vardam*critd;
 			}
 			
-			Block(com1,com2);
+			Block(com1,com2);//Checking Block chance and reducing damage accordingly
 			
 			for(int j = 0;j<9;j++)
 			{
-				indam = (curDam[j]*vardam)-curArm[j];
+				indam = (curDam[j]*vardam)-curArm[j];//Multiplying damage by variance and subtracting armor
 				
-				if(indam < 0)
+				if(indam < 0)//no negative damage
 				{
 					indam = 0;
 				}
@@ -210,7 +210,7 @@ public class Main {
 			 
 		}
 		
-		if(dam < hits)
+		if(dam < hits)//At least 1 Damage per Hit
 		{
 			dam = hits;
 		}
