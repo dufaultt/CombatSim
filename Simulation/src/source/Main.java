@@ -86,18 +86,7 @@ public class Main {
 				//Turn1
 				dam = attack(c1,c2);
 				
-				bl = random2.ints(0,(100+1)).findFirst().getAsInt();
 				fr2.write("C1 attacks using " + atkName + "\n");
-				
-				if(bproc2 > bl)
-				{
-					dam = dam/2;
-					blstat++;
-					blstat2 = blstat2+dam;
-					fr2.write("Blocked!\n");
-				}
-				
-				
 				
 				calchealth = c2.gethealth() - dam;
 				fr2.write("C2 takes " + dam + " damage\n");
@@ -125,16 +114,7 @@ public class Main {
 				{
 					dam = attack(c2,c1);
 					
-
-					bl = random2.ints(0,(100+1)).findFirst().getAsInt();
 					fr2.write("C2 attacks using " + atkName + "\n");
-					
-					if(bproc1 > bl)
-					{
-						fr2.write("Blocked! " + dam );
-						dam = dam/8;
-						
-					}
 					
 					
 					calchealth = c1.gethealth() - dam;
