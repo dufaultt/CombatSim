@@ -166,6 +166,16 @@ public class Combatant {
 		return arm;
 	}
 	
+	public double getMEva()
+	{
+		return mEva;
+	}
+	
+	public double getREva()
+	{
+		return rEva;
+	}
+	
 	public int getBlockC()
 	{
 		return wep1.getBlock();
@@ -175,6 +185,8 @@ public class Combatant {
 	{
 		return wep1.getBlockA();
 	}
+	
+
 	
 		
 }
