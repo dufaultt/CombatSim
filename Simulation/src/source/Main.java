@@ -161,7 +161,7 @@ public class Main {
 		int wHits = com1.wep1.getHits();//get number of hits
 		int dam = 0;//reset damage
 		double indam = 0;
-		int hits = 0;
+		int hits = 0;//reset hits
 		int accur = com1.wep1.getAccur();
 		double crit = com1.getWepcChance();
 		double critd = com1.getWepcdam();
