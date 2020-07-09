@@ -178,12 +178,12 @@ public class Combatant {
 	
 	public double getMAcc()
 	{
-		return mEva;
+		return mAcc;
 	}
 	
 	public double getRAcc()
 	{
-		return rEva;
+		return rAcc;
 	}
 	
 	public int getBlockC()
