@@ -139,4 +139,9 @@ public class Sword extends Weapon{
 	{
 		return blockDam;
 	}
+	
+	public char getAtType()
+	{
+		return atType;
+	}
 }
