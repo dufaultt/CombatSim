@@ -10,6 +10,7 @@ public abstract class Weapon {
 	double cDam;		//Crit Damage
 	int[] curDam = {0,0,0,0,0,0,0,0,0}; //Current Damage
 	int accur,bl;
+	char atType;
 	String movName;
 	
 	int pAt,sAt,iAt; //Attack values for Slash, Pierce, and Impact (Physical)
@@ -20,7 +21,7 @@ public abstract class Weapon {
 	int bhAt,bcAt,beAt; //Attack values for Heat, Cold, and Electric (Elemental)
 	int brAt,bbAt,boAt; //Attack values for Radioactive, Blast, and Corrosice (Special)
 	
-	int[] blockDam;
+	int[] blockDam; //Block damage reduction
 	int moves,hits;
 
 	public double getcDam()
@@ -76,6 +77,11 @@ public abstract class Weapon {
 	public int[] getBlockA()
 	{
 		return blockDam;
+	}
+	
+	public char getAtType()
+	{
+		return atType;
 	}
 	
 }
