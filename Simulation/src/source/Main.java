@@ -167,6 +167,15 @@ public class Main {
 		double critd = com1.getWepcdam();
 		atkName = com1.wep1.getName();
 
+		if(com1.wep1.getAtType() == 'M')
+		{
+			
+		}
+		else if(com1.wep1.getAtType() == 'R')
+		{
+			
+		}
+		
 		for(int i = 0; i<wHits; i++)//calculate misses/hits
 		{ 
 			int mark = rGlobal.ints(0,(100+1)).findFirst().getAsInt();
