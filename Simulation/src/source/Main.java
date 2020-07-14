@@ -173,7 +173,7 @@ public class Main {
 		}
 		else if(com1.wep1.getAtType() == 'R')
 		{
-
+			accur = (int) (accur*com1.getRAcc());
 		}
 		
 		for(int i = 0; i<wHits; i++)//calculate misses/hits
