@@ -169,11 +169,11 @@ public class Main {
 
 		if(com1.wep1.getAtType() == 'M')
 		{
-			
+			accur = (int) (accur*com1.getMAcc());
 		}
 		else if(com1.wep1.getAtType() == 'R')
 		{
-			
+
 		}
 		
 		for(int i = 0; i<wHits; i++)//calculate misses/hits
