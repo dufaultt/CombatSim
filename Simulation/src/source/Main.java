@@ -167,11 +167,11 @@ public class Main {
 		double critd = com1.getWepcdam();
 		atkName = com1.wep1.getName();
 
-		if(com1.wep1.getAtType() == 'M')
+		if(com1.wep1.getAtType() == 'M')//Melee Accuracy
 		{
 			accur = (int) (accur*com1.getMAcc());
 		}
-		else if(com1.wep1.getAtType() == 'R')
+		else if(com1.wep1.getAtType() == 'R')//Ranged Accuracy
 		{
 			accur = (int) (accur*com1.getRAcc());
 		}
