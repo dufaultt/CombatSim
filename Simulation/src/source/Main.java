@@ -162,7 +162,7 @@ public class Main {
 		int dam = 0;//reset damage
 		double indam = 0;
 		int hits = 0;//reset hits
-		int accur = com1.wep1.getAccur();
+		int accur = com1.wep1.getAccur();//get Accuracy
 		double crit = com1.getWepcChance();
 		double critd = com1.getWepcdam();
 		atkName = com1.wep1.getName();
