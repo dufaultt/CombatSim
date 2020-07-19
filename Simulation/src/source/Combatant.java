@@ -196,7 +196,10 @@ public class Combatant {
 		return wep1.getBlockA();
 	}
 	
-
+	public double getMelDam()
+	{
+		return melDam;
+	}
 	
 		
 }
