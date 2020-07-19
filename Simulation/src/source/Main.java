@@ -167,6 +167,7 @@ public class Main {
 		double critd = com1.getWepcdam();
 		atkName = com1.wep1.getName();
 
+		//Accuracy Modifier calculation
 		if(com1.wep1.getAtType() == 'M')//Melee Accuracy
 		{
 			accur = (int) (accur*com1.getMAcc());
