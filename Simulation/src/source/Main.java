@@ -160,7 +160,7 @@ public class Main {
 		com1.wep1.moveselect();//select move
 		int wHits = com1.wep1.getHits();//get number of hits
 		int dam = 0;//reset damage
-		double indam = 0;
+		double indam = 0;//reset in progress damage
 		int hits = 0;//reset hits
 		int accur = com1.wep1.getAccur();//get Accuracy
 		double crit = com1.getWepcChance();
