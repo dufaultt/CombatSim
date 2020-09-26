@@ -7,7 +7,7 @@ public class Main {
 	
 	static Random rGlobal = new Random((int) (new Date().getTime()/1000)+2);
 	static double vardam;
-	static double varcrit;
+	static double varcrit; 
 	static int varblockc;
 	double indam;
 	static int[] curDam = {0,0,0,0,0,0,0,0,0};
