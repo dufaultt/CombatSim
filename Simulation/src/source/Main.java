@@ -23,6 +23,9 @@ public class Main {
 		int str1,str2,edu1,edu2,dex1,dex2,wil1,wil2,itl1,itl2,agi1,agi2,per1,per2;
 		int bproc1,bproc2;
 		Weapon wep1,wep2;
+		MovementTest test1;
+		
+		test1 = new MovementTest();
 		
 		//Combatant 1
 		str1 = 100;
